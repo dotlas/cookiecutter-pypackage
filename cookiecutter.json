@@ -1,0 +1,9 @@
+{
+  "name": "Project name",
+  "slug": "{{ cookiecutter.name.lower().replace(' ', '-') }}",
+  "github_repo": "https://github.com/dotlas/{{cookiecutter.slug}}",
+  "description": "A short description of the project",
+  "emoji": "A relevant emoji",
+  "author": "Dotlas, Inc.",
+  "author_email": "tech@dotlas.com"
+}

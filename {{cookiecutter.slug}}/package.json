@@ -1,0 +1,11 @@
+{
+  "name": "{{cookiecutter.slug}}",
+  "private": true,
+  "version": "0.0.1",
+  "description": "{{cookiecutter.description}}",
+  "repository": {
+    "type": "git",
+    "url": "{{cookiecutter.github_repo}}"
+  },
+  "packageManager": "pnpm@7.13.2"
+}
