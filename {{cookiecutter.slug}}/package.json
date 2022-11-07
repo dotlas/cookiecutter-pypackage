@@ -3,9 +3,15 @@
   "private": true,
   "version": "0.0.1",
   "description": "{{cookiecutter.description}}",
+  "scripts": {
+    "prepare": "husky install"
+  },
   "repository": {
     "type": "git",
     "url": "{{cookiecutter.github_repo}}"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1"
   },
   "packageManager": "pnpm@7.13.2"
 }

@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Install node modules
+echo "Installing Node packages"
+pnpm i
+
+# Install python dev dependencies
+pip install -r requirements-dev.txt
+
+# Install `{{cookiecutter.slug}}` dependencies
+pip install -e .
