@@ -1,0 +1,17 @@
+# black
+# isort
+
+# ruff
+# - pycodestyle
+# - pydocstyle
+# - pyupgrade
+# - flake8
+# - - mccabe
+
+# pylama
+# - radon ?
+# - eradicate
+# - vulture
+# - pylint ?
+
+# bandit
