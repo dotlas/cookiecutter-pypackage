@@ -1,6 +1,7 @@
 {
   "name": "Project name",
-  "slug": "{{ cookiecutter.name.lower().replace(' ', '-') }}",
+  "slug": "{{cookiecutter.name.lower().replace(' ', '-')}}",
+  "package_name": "{{cookiecutter.slug.replace('-', '_')}}",
   "github_repo": "https://github.com/dotlas/{{cookiecutter.slug}}",
   "description": "A short description of the project",
   "emoji": "A relevant emoji",

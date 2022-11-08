@@ -1,7 +1,7 @@
 """Sets up package"""
 
-from setuptools import find_packages, setup
 from pkg_resources import parse_requirements
+from setuptools import find_packages, setup
 
 
 with open("requirements.txt", "r", encoding="utf-8") as fs:
@@ -14,6 +14,6 @@ setup(
     author="{{cookiecutter.author}}",
     author_email="{{cookiecutter.author_email}}",
     url="{{cookiecutter.github_repo}}",
-    packages=find_packages(".", include=["{{cookiecutter.slug}}*"]),
+    packages=find_packages(".", include=["{{cookiecutter.package_name}}*"]),
     install_requires=install_requires,
 )

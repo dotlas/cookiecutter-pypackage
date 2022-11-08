@@ -2,8 +2,12 @@
 [tool.black]
 line-length = 88
 
-# black
-# isort
+# https://github.com/PyCQA/isort
+[tool.isort]
+known_local_folder = ["{{cookiecutter.package_name}}"]
+lines_after_imports = 2
+profile = "black"
+skip_gitignore = true
 
 # ruff
 # - pycodestyle

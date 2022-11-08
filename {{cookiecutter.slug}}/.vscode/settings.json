@@ -1,0 +1,7 @@
+{
+  "isort.check": true,
+  "isort.importStrategy": "fromEnvironment",
+  "isort.severity": {
+    "E": "Information"
+  }
+}
