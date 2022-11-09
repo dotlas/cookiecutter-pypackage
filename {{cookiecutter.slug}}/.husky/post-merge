@@ -5,8 +5,6 @@
 echo "Installing Node packages"
 pnpm i
 
-# Install python dev dependencies
-pip install -r requirements-dev.txt
-
-# Install `{{cookiecutter.slug}}` dependencies
-pip install -e .
+# Install `{{cookiecutter.package_name}}` and all dependencies
+echo "Installing Python dependencies"
+flit install --deps develop --symlink
