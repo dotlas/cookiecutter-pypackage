@@ -1,3 +1,39 @@
+# Build requirements
+# See [PEP 518](https://peps.python.org/pep-0518/#build-system-table)
+[build-system]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core >=3.2,<4"]
+
+# Project Metadata
+# See [PEP 621](https://peps.python.org/pep-0621/#details)
+[project]
+authors = [
+  {name = "{{cookiecutter.author}}", email = "{{cookiecutter.author_email}}"},
+]
+description = "{{cookiecutter.description}}"
+# keywords = []
+# license = "MIT"
+dependencies = []
+dynamic = ["version"]
+name = "{{cookiecutter.slug}}"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "isort",
+  "pre-commit",
+]
+doc = []
+test = []
+
+[project.urls]
+# changelog = ""
+# documentation = ""
+# homepage = ""
+repository = "{{cookiecutter.github_repo}}"
+
 # https://github.com/psf/black
 [tool.black]
 line-length = 88
