@@ -3,5 +3,9 @@
   "isort.importStrategy": "fromEnvironment",
   "isort.severity": {
     "E": "Information"
-  }
+  },
+  "python.languageServer": "Pylance",
+  "python.linting.enabled": false,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.formatting.provider": "black"
 }
