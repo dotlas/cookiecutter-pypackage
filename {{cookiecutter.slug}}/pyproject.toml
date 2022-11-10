@@ -13,11 +13,12 @@ authors = [
 description = "{{cookiecutter.description}}"
 # keywords = []
 # license = "MIT"
-dependencies = []
 dynamic = ["version"]
 name = "{{cookiecutter.slug}}"
 readme = "README.md"
 requires-python = ">=3.10"
+# Core dependencies
+dependencies = []
 
 [project.optional-dependencies]
 dev = [
