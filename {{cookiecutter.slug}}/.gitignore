@@ -38,6 +38,9 @@ node_modules/
 # Environment Variables
 .env
 
+# Linting
+.ruff_cache
+
 # Juptyer
 .ipynb_checkpoints
 
