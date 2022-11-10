@@ -92,6 +92,17 @@ per-file-ignores = {}
 # Assume Python 3.10.
 target-version = "py310"
 
+# https://github.com/klen/pylama
+[tool.pylama]
+format = "pylint"
+skip = "*/.tox/*,*/.env/*"
+linters = "pylint,radon,eradicate,vulture"
+
+[tool.pylama.linter.pylint]
+max_line_length = 100
+disable = "R"
+
+
 # ruff
 # - pycodestyle
 # - pydocstyle
