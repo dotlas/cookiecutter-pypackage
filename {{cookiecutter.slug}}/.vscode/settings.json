@@ -13,5 +13,6 @@
   "python.formatting.provider": "none",
   "python.languageServer": "Pylance",
   "python.linting.enabled": true,
+  "python.linting.banditEnabled": true,
   "python.linting.pylamaEnabled": true
 }
