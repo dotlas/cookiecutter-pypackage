@@ -3,5 +3,6 @@
   "isort.importStrategy": "fromEnvironment",
   "isort.severity": {
     "E": "Information"
-  }
+  },
+  "python.formatting.provider": "black"
 }
