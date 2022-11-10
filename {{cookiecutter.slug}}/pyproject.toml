@@ -24,6 +24,7 @@ dependencies = []
 dev = [
   "black",
   "isort",
+  "pylama[eradicate,mypy,radon,toml]",
   "pre-commit",
   "ruff",
 ]
@@ -50,7 +51,7 @@ skip_gitignore = true
 # https://github.com/charliermarsh/ruff
 [tool.ruff]
 ignore = [
-  "E501", # Avoid checking for line-lenght violations
+  "E501", # Avoid checking for line-length violations
   "D203", # Conflicts with Google style
   "D204", # Conflicts with Google style
   "D213", # Conflicts with Google style
@@ -106,26 +107,7 @@ target-version = "py310"
 
 # https://github.com/klen/pylama
 [tool.pylama]
-format = "pylint"
-skip = "*/.tox/*,*/.env/*"
-linters = "pylint,radon,eradicate,vulture"
-
-[tool.pylama.linter.pylint]
-max_line_length = 100
-disable = "R"
-
-
-# ruff
-# - pycodestyle
-# - pydocstyle
-# - pyupgrade
-# - flake8
-# - - mccabe
-
-# pylama
-# - radon ?
-# - eradicate
-# - vulture
-# - pylint ?
+linters = "eradicate,mccabe,mypy,radon"
+max_line_length = 88
 
 # bandit

@@ -12,5 +12,6 @@
   "python.analysis.typeCheckingMode": "basic",
   "python.formatting.provider": "none",
   "python.languageServer": "Pylance",
-  "python.linting.enabled": false
+  "python.linting.enabled": true,
+  "python.linting.pylamaEnabled": true
 }
