@@ -46,10 +46,22 @@ known_local_folder = ["{{cookiecutter.package_name}}"]
 lines_after_imports = 2
 profile = "black"
 skip_gitignore = true
+
 # https://github.com/charliermarsh/ruff
 [tool.ruff]
 ignore = [
   "E501", # Avoid checking for line-lenght violations
+  "D203", # Conflicts with Google style
+  "D204", # Conflicts with Google style
+  "D213", # Conflicts with Google style
+  "D215", # Conflicts with Google style
+  "D400", # Conflicts with Google style
+  "D404", # Conflicts with Google style
+  "D406", # Conflicts with Google style
+  "D407", # Conflicts with Google style
+  "D408", # Conflicts with Google style
+  "D409", # Conflicts with Google style
+  "D413", # Conflicts with Google style
 ]
 line-length = 88
 select = [

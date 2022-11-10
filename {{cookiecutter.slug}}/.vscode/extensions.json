@@ -2,6 +2,7 @@
   "recommendations": [
     "ms-python.python",
     "ms-python.isort",
-    "charliermarsh.ruff"
+    "charliermarsh.ruff",
+    "njpwerner.autodocstring"
   ]
 }
