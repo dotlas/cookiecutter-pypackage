@@ -1,4 +1,7 @@
 {
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
   "autoDocstring.docstringFormat": "google",
   "autoDocstring.quoteStyle": "\"\"\"",
   "isort.check": true,
@@ -7,7 +10,7 @@
     "E": "Information"
   },
   "python.analysis.typeCheckingMode": "basic",
-  "python.formatting.provider": "black",
+  "python.formatting.provider": "none",
   "python.languageServer": "Pylance",
   "python.linting.enabled": false
 }
