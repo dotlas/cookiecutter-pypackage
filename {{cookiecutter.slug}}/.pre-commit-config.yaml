@@ -19,3 +19,10 @@ repos:
     rev: 22.3.0
     hooks:
       - id: black
+  
+  - repo: https://github.com/klen/pylama
+    rev: 8.4.1
+    hooks:
+    - id: pylama
+      additional_dependencies:
+        - toml

@@ -45,6 +45,17 @@ lines_after_imports = 2
 profile = "black"
 skip_gitignore = true
 
+# https://github.com/klen/pylama
+[tool.pylama]
+format = "pylint"
+skip = "*/.tox/*,*/.env/*"
+linters = "pylint,radon,eradicate,vulture"
+
+[tool.pylama.linter.pylint]
+max_line_length = 100
+disable = "R"
+
+
 # ruff
 # - pycodestyle
 # - pydocstyle
