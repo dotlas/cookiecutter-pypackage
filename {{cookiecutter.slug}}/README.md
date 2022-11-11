@@ -21,6 +21,12 @@
 - Install `{{cookiecutter.package_name}}` and all dependencies
 
   ```bash
+  pip install -e ".[dev,doc,test]"
+  ```
+
+  Alternatively,
+
+  ```bash
   flit install --deps develop --symlink
   ```
 
