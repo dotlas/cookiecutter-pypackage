@@ -7,4 +7,4 @@ pnpm i
 
 # Install `{{cookiecutter.package_name}}` and all dependencies
 echo "Installing Python dependencies"
-flit install --deps develop --symlink
+pip install -e ".[dev,doc,test]"
