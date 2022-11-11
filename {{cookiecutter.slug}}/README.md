@@ -24,11 +24,16 @@
   pip install -e ".[dev,doc,test]"
   ```
 
-  Alternatively,
+  > Alternatively,
+  >
+  > ```bash
+  > flit install --deps develop --symlink
+  > ```
 
-  ```bash
-  flit install --deps develop --symlink
-  ```
+  > **Warning**
+  >
+  > It is crucial to include the `-e` flag when installing with `pip` (or `--symlink` with `flit`).
+  > This makes the installed package `editable`, meaning changes to the codebase are reflected in the installation.
 
 - Verify installation
 
