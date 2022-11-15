@@ -3,6 +3,17 @@
 </h1>
 <p align="center">{{cookiecutter.description}}</p>
 
+- [📓 Prerequisites](#-prerequisites)
+- [📦 Setup](#-setup)
+
+## 📓 Prerequisites
+
+Go through the [onboarding guide](https://dotlas.atlassian.net/wiki/spaces/TECHDOTLAS/pages/22085636/Onboarding) to setup the following tools:
+
+- A [`conda`](https://dotlas.atlassian.net/wiki/spaces/TECHDOTLAS/pages/75628545/anaconda) environment, `dotlas`, equipped with [`python==3.10`](https://dotlas.atlassian.net/wiki/spaces/TECHDOTLAS/pages/21528577/python)
+- A [`node`](https://dotlas.atlassian.net/wiki/spaces/TECHDOTLAS/pages/18317411/node) environment with the latest LTS version
+- [`pnpm`](https://dotlas.atlassian.net/wiki/spaces/TECHDOTLAS/pages/75595793/pnpm), the node package manager
+
 ## 📦 Setup
 
 - Clone the repository
@@ -10,6 +21,12 @@
   ```bash
   git clone {{cookiecutter.github_repo}}
   cd {{cookiecutter.slug}}
+  ```
+
+- Activate the `dotlas` `conda` environment
+
+  ```bash
+  conda activate dotlas
   ```
 
 - Install `node` dependencies
