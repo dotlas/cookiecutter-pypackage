@@ -4,6 +4,7 @@
     "ms-python.black-formatter",
     "ms-python.isort",
     "charliermarsh.ruff",
-    "njpwerner.autodocstring"
+    "njpwerner.autodocstring",
+    "bodil.prettier-toml"
   ]
 }

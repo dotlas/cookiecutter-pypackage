@@ -8,7 +8,7 @@ requires = ["flit_core >=3.2,<4"]
 # See [PEP 621](https://peps.python.org/pep-0621/#details)
 [project]
 authors = [
-  {name = "{{cookiecutter.author}}", email = "{{cookiecutter.author_email}}"},
+  { name = "{{cookiecutter.author}}", email = "{{cookiecutter.author_email}}" },
 ]
 description = "{{cookiecutter.description}}"
 # keywords = []
@@ -52,18 +52,20 @@ skip_gitignore = true
 # https://github.com/charliermarsh/ruff
 [tool.ruff]
 ignore = [
-  "E501", # Avoid checking for line-length violations
-  "D203", # Conflicts with Google style
-  "D204", # Conflicts with Google style
-  "D213", # Conflicts with Google style
-  "D215", # Conflicts with Google style
-  "D400", # Conflicts with Google style
-  "D404", # Conflicts with Google style
-  "D406", # Conflicts with Google style
-  "D407", # Conflicts with Google style
-  "D408", # Conflicts with Google style
-  "D409", # Conflicts with Google style
-  "D413", # Conflicts with Google style
+  # Avoid checking for line-length violations
+  "E501",
+  # Conflicts with Google style
+  "D203",
+  "D204",
+  "D213",
+  "D215",
+  "D400",
+  "D404",
+  "D406",
+  "D407",
+  "D408",
+  "D409",
+  "D413",
 ]
 line-length = 88
 select = [
@@ -79,6 +81,7 @@ select = [
   "ANN", # [`flake8-annotations`](https://github.com/charliermarsh/ruff#flake8-annotations)
   "RUF", # [`ruff`](https://github.com/charliermarsh/ruff#ruff-specific-rules)
   "M", # [`noqa`](https://github.com/charliermarsh/ruff#meta-rules)
+
 ]
 # Exclude a variety of commonly ignored directories.
 exclude = [
@@ -102,7 +105,7 @@ exclude = [
   "node_modules",
   "venv",
 ]
-per-file-ignores = {}
+per-file-ignores = {  }
 # Assume Python 3.10.
 target-version = "py310"
 
