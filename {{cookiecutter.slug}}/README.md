@@ -8,11 +8,9 @@
 
 ## 📓 Prerequisites
 
-Go through the [onboarding guide](https://dotlas.atlassian.net/wiki/spaces/TECHDOTLAS/pages/22085636/Onboarding) to setup the following tools:
-
-- A [`conda`](https://dotlas.atlassian.net/wiki/spaces/TECHDOTLAS/pages/75628545/anaconda) environment, `dotlas`, equipped with [`python==3.10`](https://dotlas.atlassian.net/wiki/spaces/TECHDOTLAS/pages/21528577/python)
-- A [`node`](https://dotlas.atlassian.net/wiki/spaces/TECHDOTLAS/pages/18317411/node) environment with the latest LTS version
-- [`pnpm`](https://dotlas.atlassian.net/wiki/spaces/TECHDOTLAS/pages/75595793/pnpm), the node package manager
+- A [`conda`](https://continuum.io/) environment, equipped with [`python==3.10`](https://www.python.org/downloads/release/python-3100/)
+- A [`node`](https://github.com/nvm-sh/nvm) environment with the latest LTS version
+- [`pnpm`](https://pnpm.io/), the node package manager
 
 ## 📦 Setup
 
@@ -23,10 +21,11 @@ Go through the [onboarding guide](https://dotlas.atlassian.net/wiki/spaces/TECHD
   cd {{cookiecutter.slug}}
   ```
 
-- Activate the `dotlas` `conda` environment
+- Create a `conda` environment for the project
 
   ```bash
-  conda activate dotlas
+  conda create --name {{cookiecutter.package_name}} python=3.10 -y
+  conda activate {{cookiecutter.package_name}}
   ```
 
 - Install `node` dependencies
