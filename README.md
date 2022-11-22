@@ -1,8 +1,9 @@
-# `cookiecutter-template`
+# [Cookiecutter](https://github.com/cookiecutter/cookiecutter/) template for Python Package Projects
 
-A [`cookiecutter`](https://github.com/cookiecutter/cookiecutter) template for Python projects.
+* Includes `husky`, `node` and `pnpm`
+* Uses `pyproject.toml` and `pre-commit` hooks
 
-- [`cookiecutter-template`](#cookiecutter-template)
+- [Cookiecutter template for Python Package Projects](#cookiecutter-template-for-python-package-projects)
   - [🍪 Setup](#-setup)
   - [🧰 Usage](#-usage)
 
@@ -30,4 +31,9 @@ Run the following command to create a new project:
 
 ```bash
 cookiecutter .
+```
+
+Or use directly from source:
+```bash
+cookiecutter gh:dotlas/cookiecutter-pyproject
 ```
