@@ -1,0 +1,28 @@
+name: Publish documentation
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docs:
+    name: Publish documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - id: docs-setup-python
+        name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install package
+        run: |
+          pip install -e ".[dev,doc,test]"
+
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force

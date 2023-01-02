@@ -1,0 +1,128 @@
+# Site metadata
+site_name: "{{ cookiecutter.name }}"
+site_description: "{{ cookiecutter.description }}"
+# site_url: https://dotlas.com
+
+# Linking GitHub
+repo_name: dotlas/{{ cookiecutter.slug }}
+repo_url: "{{ cookiecutter.github_repo }}"
+edit_uri: "edit/main/docs"
+
+# Legal
+copyright: Copyright &copy; 2023 Dotlas, Inc.
+
+theme:
+  name: material
+  # Color
+  palette:
+    # Light
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Dark
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  # Typography
+  font:
+    text: Inter
+    code: JetBrains Mono
+  # Logo
+  logo: assets/images/favicon.svg
+  # Browser Tab Icon
+  favicon: assets/images/favicon.svg
+  # MkDocs Material Features
+  features:
+    - content.code.annotate # Code annotations
+    - navigation.instant # Navigate without reloading
+    - navigation.tracking # Keep #fragments in history
+    - navigation.tabs # Top level navigation in header
+    - navigation.tabs.sticky # Tabs don't disappear when scrolling
+    - navigation.sections # Always open in sidebar
+    - navigation.indexes # Sections have an associated page
+    - navigation.top # Button that scrolls back to the top of the page
+    - toc.follow # Sticky sidebar
+    - search.suggest # Search completions
+    - search.highlight # Highlights search query in results
+    - search.share # Allows for quick sharing
+
+# Navigation menu
+nav:
+  - index.md
+  - Reference: reference/
+
+# MkDocs plugins
+plugins:
+  - exclude:
+      glob:
+        - "legacy/**"
+  - search
+  - gen-files:
+      scripts:
+        - "scripts/docs/generate_reference_pages.py"
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
+      enable_creation_date: true
+      enabled: true
+  - mkdocstrings
+  - minify:
+      minify_html: true
+
+# Extend the default markdown syntax
+markdown_extensions:
+  - abbr # Abbreviations
+  - admonition # Block quotes with different context
+  - attr_list # Add HTML attributes
+  - def_list # List of words and their definitions
+  - footnotes
+  - md_in_html
+  - toc: # Table of contents
+      permalink: "#"
+      title: On this page
+  - tables
+  - pymdownx.betterem: # Smart embolden and italicize
+      smart_enable: all
+  - pymdownx.caret # Superscripts
+  - pymdownx.mark # Highlight text
+  - pymdownx.details # Subscripts
+  - pymdownx.highlight: # Code syntax highlighting
+      use_pygments: true # build time
+      anchor_linenums: true
+  - pymdownx.inlinehilite # For inline code
+  - pymdownx.keys # Keyboard UI
+  - pymdownx.smartsymbols
+  - pymdownx.snippets: # Include content from files into the current document
+      check_paths: true
+  - pymdownx.superfences: # Nested code blocks
+      custom_fences:
+        - name: mermaid # Graphs
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed: # Tabs for content
+      alternate_style: true
+  - pymdownx.tasklist: # Checkboxes
+      custom_checkbox: true
+
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/dotlas
+      name: "GitHub"
+
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/dotlas
+      name: "LinkedIn"
+
+watch:
+  - src/{{ cookiecutter.slug }}

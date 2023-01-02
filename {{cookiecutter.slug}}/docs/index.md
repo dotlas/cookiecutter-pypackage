@@ -1,0 +1,3 @@
+# {{ cookiecutter.name }}
+
+Hello, world!
