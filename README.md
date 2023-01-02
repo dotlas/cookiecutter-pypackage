@@ -12,7 +12,7 @@
 - Clone the repository
 
   ```bash
-  git clone https://github.com/dotlas/cookiecutter-template
+  git clone https://github.com/dotlas/cookiecutter-pypackage
   cd cookiecutter-template
   ```
 
@@ -35,5 +35,5 @@ cookiecutter .
 
 Or use directly from source:
 ```bash
-cookiecutter gh:dotlas/cookiecutter-pyproject
+cookiecutter gh:dotlas/cookiecutter-pypackage
 ```
