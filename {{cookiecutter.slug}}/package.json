@@ -4,14 +4,20 @@
   "version": "0.0.1",
   "description": "{{cookiecutter.description}}",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "repository": {
     "type": "git",
     "url": "{{cookiecutter.github_repo}}"
   },
   "devDependencies": {
-    "husky": "^8.0.1"
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/cz-commitlint": "^17.3.0",
+    "commitizen": "^4.2.6",
+    "husky": "^8.0.1",
+    "inquirer": "8"
   },
   "packageManager": "pnpm@7.13.2"
 }
