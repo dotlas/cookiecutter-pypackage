@@ -56,3 +56,5 @@
   ```python
   import {{cookiecutter.package_name}}
   ```
+
+> Built with [Dotlas PyPackage Cookiecutter](https://github.com/dotlas/cookiecutter-pypackage): a template to create modern python packages.
