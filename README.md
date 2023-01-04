@@ -6,26 +6,55 @@
 
 <div align="center">
 
+## About
+
+</div>
+
+<div align="center">
+
 ![](https://img.shields.io/badge/Cookiecutter-D4AA00.svg?style=for-the-badge&logo=Cookiecutter&logoColor=white)
 ![](https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white)
+
+</div>
+
+Cookiecutter templates enables developers and data scientists to create projects from a predefined template. This template is a modern Python package project structure that utilizes a number of tools to automate and align with best practices in order to have smoother development. The project template can be viewed from the [structure](structure.md) document. The template creates a project that can be hosted on GitHub and deployed to [PyPI](https://pypi.org/).
+
+<div align="center">
 
 ![](https://img.shields.io/badge/pnpm-F69220.svg?style=for-the-badge&logo=pnpm&logoColor=white)
 ![](https://img.shields.io/badge/commitlint-000000.svg?style=for-the-badge&logo=commitlint&logoColor=white)
 ![](https://img.shields.io/badge/precommit-FAB040.svg?style=for-the-badge&logo=pre-commit&logoColor=black)
 ![](https://img.shields.io/badge/Conventional%20Commits-FE5196.svg?style=for-the-badge&logo=Conventional-Commits&logoColor=white)
 
-![](https://img.shields.io/badge/GitHub%20Actions-2088FF.svg?style=for-the-badge&logo=GitHub-Actions&logoColor=white)
+</div>
+
+This template uses `husky`, `commitlint` and `pre-commit` managed by `pnpm` to use `git` hooks to automate tasks such as linting, formatting, testing, etc. before a commit is made. This ensures that the code is always in a consistent state and that the commit history is clean and easy to read. The commit messages are also linted to ensure that they follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+
+<div align="center">
+
+![](https://img.shields.io/badge/Material%20Design-757575.svg?style=for-the-badge&logo=Material-Design&logoColor=white)
+![](https://img.shields.io/badge/Read%20the%20Docs-8CA1AF.svg?style=for-the-badge&logo=Read-the-Docs&logoColor=white)
+
+</div>
+
+`mkdocs` is used to generate a static site for documentation of the project from the `docs` folder. This is hosted on GitHub Pages through a GitHub Action in `.github`. The site is automatically built and deployed on every push to the `main` branch. [Mkdocs Material](https://squidfunk.github.io/mkdocs-material/) is used as the theme for the documentation site.
+
+<div align="center">
 
 ![](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC.svg?style=for-the-badge&logo=Visual-Studio-Code&logoColor=white)
 
 </div>
 
-## About
+This project is primarily built for `.vscode` but can be used with other editors as well. The `.vscode` folder contains a number of settings and extensions that are recommended for the project. These are automatically installed when the project is opened in VS Code.
 
-Cookiecutter templates enables developers to create projects from a predefined template. This template is a modern Python package project structure that utilizes a number of tools to automate and enforce best practices.
+A number of python linters are configured to run through [`pyproject.toml`](https://peps.python.org/pep-0518/).
 
-* [Faq](faq.md) for more information on choice of tools and how to use them.
-* [Project structure](structure.md) for more information on the project structure.
+---
+
+* ⁉️ [Helper Resources](help.md) for more information on choice of tools and how to use them.
+* 🎋 [Project structure](structure.md) for more information on the project structure.
+
+---
 
 ## 🍪 Setup
 
