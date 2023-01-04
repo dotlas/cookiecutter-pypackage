@@ -5,6 +5,16 @@
     "ms-python.isort",
     "charliermarsh.ruff",
     "njpwerner.autodocstring",
-    "bodil.prettier-toml"
+    "bodil.prettier-toml",
+    "alefragnani.bookmarks",
+    "streetsidesoftware.code-spell-checker",
+    "grapecity.gc-excelviewer",
+    "davidanson.vscode-markdownlint",
+    "mtxr.sqltools",
+    "ms-vscode-remote.remote-ssh",
+    "njpwerner.autodocstring",
+    "bungcip.better-toml",
+    "github.copilot",
+    "pkief.material-icon-theme"
   ]
 }

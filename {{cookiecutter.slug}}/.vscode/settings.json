@@ -5,6 +5,9 @@
   "[toml]": {
     "editor.defaultFormatter": "bodil.prettier-toml"
   },
+  "files.exclude": {
+    "**/.git": false
+  },
   "autoDocstring.docstringFormat": "google",
   "autoDocstring.quoteStyle": "\"\"\"",
   "isort.check": true,
@@ -17,5 +20,22 @@
   "python.languageServer": "Pylance",
   "python.linting.enabled": true,
   "python.linting.banditEnabled": true,
-  "python.linting.pylamaEnabled": true
+  "python.linting.banditArgs": [
+    "--ignore=B101"
+  ],
+  "python.linting.pylamaEnabled": true,
+  "python.linting.pylamaArgs": [
+    "--disable_error_code=annotation-unchecked"
+  ],
+  "python.linting.flake8Args": [
+    "--max-line-length=120",
+    "--ignore=E501,E504,W503"
+  ],
+  "material-icon-theme.files.associations": {
+    ".czrc" : "dhall"
+  },
+  "material-icon-theme.folders.associations": {
+    "experiment": "test"
+  }
+
 }

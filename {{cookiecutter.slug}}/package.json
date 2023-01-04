@@ -5,7 +5,9 @@
   "description": "{{cookiecutter.description}}",
   "scripts": {
     "prepare": "husky install",
-    "commit": "cz"
+    "commit": "cz",
+    "format" : "isort . && black . && nbqa black . && nbqa isort . --float-to-top",
+    "test" : "python -m coverage run -m pytest && python -m coverage html -i"
   },
   "repository": {
     "type": "git",
