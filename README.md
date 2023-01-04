@@ -62,8 +62,8 @@ This project is primarily built for `.vscode` but can be used with other editors
 ![](https://badgen.net/badge/linter/flake8/green)
 
 ![](https://img.shields.io/badge/Pytest-0A9EDC.svg?style=for-the-badge&logo=Pytest&logoColor=white)
-![]()
 
+</div>
 </div>
 
 This project uses Pytest as a testing framework with code coverage. A number of python linters are configured to run through [`pyproject.toml`](https://peps.python.org/pep-0518/).
