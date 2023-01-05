@@ -18,7 +18,9 @@ name = "{{cookiecutter.slug}}"
 readme = "README.md"
 requires-python = ">=3.10"
 # Core dependencies
-dependencies = []
+dependencies = [
+  "loguru>=0.6.0"
+]
 
 [project.optional-dependencies]
 dev = [
