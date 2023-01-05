@@ -5,6 +5,7 @@
 
 - [📓 Prerequisites](#-prerequisites)
 - [📦 Setup](#-setup)
+- [🧪 Tests](#-tests)
 
 ## 📓 Prerequisites
 
@@ -56,5 +57,25 @@
   ```python
   import {{cookiecutter.package_name}}
   ```
+
+## 🧪 Tests
+
+- Run all tests with a coverage report
+
+    ```bash
+    pnpm test
+    ```
+
+- Speedtest (runs in parallel) without coverage report
+
+    ```bash
+    pytest -n auto
+    ```
+
+- Run a specific test file. Ex: `test_dataframe.py`
+
+    ```bash
+    pytest tests/functions/test_dataframe.py   # pytest -v for verbose
+    ```
 
 > Built with [Dotlas PyPackage Cookiecutter](https://github.com/dotlas/cookiecutter-pypackage): a template to create modern python packages.
