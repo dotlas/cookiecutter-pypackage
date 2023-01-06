@@ -7,7 +7,8 @@
     "prepare": "husky install",
     "commit": "cz",
     "format" : "isort . && black . && nbqa black . && nbqa isort . --float-to-top",
-    "test" : "python -m coverage run -m pytest && python -m coverage html -i && python -m coverage report"
+    "test" : "python -m coverage run -m pytest && python -m coverage html -i && python -m coverage report",
+    "docs" : "mkdocs build && mkdocs serve"
   },
   "repository": {
     "type": "git",

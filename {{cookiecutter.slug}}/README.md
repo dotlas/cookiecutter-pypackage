@@ -5,6 +5,7 @@
 
 - [📓 Prerequisites](#-prerequisites)
 - [📦 Setup](#-setup)
+- [🏞 Workflow](#-workflow)
 - [🧪 Tests](#-tests)
 
 ## 📓 Prerequisites
@@ -57,6 +58,27 @@
   ```python
   import {{cookiecutter.package_name}}
   ```
+
+## 🏞 Workflow
+
+- Format code (runs `black` and `isort` on `.py` and `.ipynb` files)
+
+    ```bash
+    pnpm format
+    ```
+
+- Commits use `conventional commits` and `pre-commit` hooks configured with `husky`
+
+    ```bash
+    git add <files>
+    pnpm commit
+    ```
+
+- Docs generated automatically based on function docstrings. Uses `mkdocs material` theme. View docs locally with the following command
+
+    ```bash
+    pnpm docs
+    ```
 
 ## 🧪 Tests
 
