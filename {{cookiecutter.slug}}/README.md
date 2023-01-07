@@ -74,6 +74,18 @@
     pnpm commit
     ```
 
+- If a commit fails for some reason (`pre-commit` hooks, etc.), you don't need to retype the commit details. Just run the following command to use the previous commit message and re-run the hooks.
+
+    ```bash
+    pnpm commit --retry
+    ```
+
+- **Not recommended:** If a commit does not go through the `pre-commit` hooks, you can bypass them by using the `--no-verify` flag
+
+    ```bash
+    git commit -m "<message>" --no-verify
+    ```
+
 - Docs generated automatically based on function docstrings. Uses `mkdocs material` theme. View docs locally with the following command
 
     ```bash
