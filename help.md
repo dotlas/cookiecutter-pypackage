@@ -9,6 +9,7 @@
     - [Linting](#linting)
     - [Tests \& Coverage](#tests--coverage)
   - [Project Workflow](#project-workflow)
+    - [🔖 Type-Safe Functions](#-type-safe-functions)
 
 ## Tools Used
 
@@ -73,4 +74,38 @@ The following workflow is recommended to be followed when working on a project:
   - `black` formatter can also be configured to run on save instead
 - You can optionally run tests you have created using `pnpm test`
 - Stage the files (`git add`)
-- Run `pnpm commit` to launch a prompt for commit messages
+- Run `pnpm commit` to launch a prompt for commit messages, and rerun commits using `pnpm commit --retry`
+
+### 🔖 Type-Safe Functions
+
+- By default, this template assumes functions in this package are type-safe or type-guarded. This means that type-annotations are used for functions strictly and will raise `TypeError` if the function signature is not respected by the caller. This is a good practice to ensure that the function is used correctly and that the function's return type is always correct.
+
+- For example, the following function signature:
+  
+  ```python
+  def func(a: int, b: int) -> int:
+      return a + b
+  ```
+
+  Would require type validation as follows:
+
+  ```python
+  def func(a: int, b: int) -> int:
+      if not isinstance(a, int) or not isinstance(b, int):
+          raise TypeError(f"Function arguments do not respect type signatures")
+
+      return a + b
+  ```
+
+- This repository uses [typeguard](https://typeguard.readthedocs.io/en/latest/index.html) at the project root level to implicitly validate function signatures without explicitly declaring cases within the functions like in the example above. This means that if a function is not type-safe, the function will raise a `TypeError` when called.
+- **This setting can be change from the project's `__init__.py` file.**
+
+- Individial functions can also be marked as type-safe or type-guarded by using the `@typeguard.typechecked` decorator. This is useful for functions that are not type-safe by default but can be made type-safe by adding type annotations.
+  
+  ```python
+  import typeguard
+
+  @typeguard.typechecked
+  def func(a: int, b: int) -> int:
+      return a + b
+  ```
