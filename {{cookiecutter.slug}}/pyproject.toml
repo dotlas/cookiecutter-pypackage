@@ -16,7 +16,7 @@ description = "{{cookiecutter.description}}"
 dynamic = ["version"]
 name = "{{cookiecutter.slug}}"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 # Core dependencies
 dependencies = [
   "loguru>=0.6.0"
@@ -24,35 +24,32 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-  "bandit[toml]==1.7.4",
+  "bandit[toml]~=1.7.4",
   "black",
-  "isort",
-  "pylama[eradicate,mypy,radon,toml]",
+  "cookiecutter~=2.1.1",
+  "pylama[mypy,radon,toml]",
   "pre-commit",
-  "ruff",
-  "nbqa>=1.5.3",
-  "pyprojroot>=0.2.0",
-  "python-dotenv>=0.21.0",
-  "awscli==1.27.42",
-  "typeguard>=2.13.3"
+  "ruff==0.0.259",
+  "nbqa~=1.5.3",
+  "python-dotenv~=0.21.0",
 ]
 doc = [
   "mkdocs==1.4.2",
   "mkdocs-autorefs==0.4.1",
   "mkdocs-exclude==1.0.2",
-  "mkdocs-gen-files==0.4.0",
+  "mkdocs-gen-files~=0.4.0",
   "mkdocs-git-revision-date-localized-plugin==1.1.0",
   "mkdocs-literate-nav==0.5.0",
-  "mkdocs-material==8.5.10",
+  "mkdocs-material>=8.5.10",
   "mkdocs-minify-plugin==0.6.1",
-  "mkdocstrings[python]==0.19.0",
-  "mkdocs_gen_files>=0.4.0"
+  "mkdocstrings[python]~=0.19.0",
+  "mkdocs_gen_files~=0.4.0"
 ]
 test = [
-  "pytest>=7.2.0",
-  "pytest-randomly>=3.12.0",
-  "coverage>=7.0.1",
-  "pytest-xdist==3.1.0"
+  "pytest~=7.2.0",
+  "pytest-randomly~=3.12.0",
+  "coverage~=7.0.1",
+  "pytest-xdist~=3.1.0"
 ]
 
 [project.urls]
@@ -70,45 +67,72 @@ skip_empty = true
 [tool.black]
 line-length = 88
 
-# https://github.com/PyCQA/isort
-[tool.isort]
-known_local_folder = ["{{cookiecutter.package_name}}"]
-lines_after_imports = 2
-profile = "black"
-skip_gitignore = true
-
 # https://github.com/charliermarsh/ruff
 [tool.ruff]
 ignore = [
   # Avoid checking for line-length violations
   "E501",
-  # Conflicts with Google style
-  "D203",
-  "D204",
-  "D213",
-  "D215",
-  "D400",
-  "D404",
-  "D406",
-  "D407",
-  "D408",
-  "D409",
-  "D413",
+  # Don't require docstrings
+  "D1",
+  # Allow certain concessions when type hinting
+  "ANN003",
+  "ANN101",
+  "ANN2",
+  # Allow for using `set`
+  "C401",
+  "C403",
+  "C405",
+  # Allow assigning result to a variable before returning
+  "RET504",
+  # TODO: Replace magic values with constants
+  "PLR2004",
+  # Allow global variables
+  "PLW0602",
+  "PLW0603"
 ]
 line-length = 88
 select = [
-  "E", # [`pycodestyle`](https://github.com/charliermarsh/ruff#pycodestyle)
-  "F", # [`pyflakes`](https://github.com/charliermarsh/ruff#pyflakes)
-  "D", # [`pydocstyle`](https://github.com/charliermarsh/ruff#pydocstyle)
-  "U", # [`pyupgrade`](https://github.com/charliermarsh/ruff#pyupgrade)
-  "N", # [`pep8-naming`](https://github.com/charliermarsh/ruff#pep8-naming)
-  "C", # [`flake8-comprehensions`](https://github.com/charliermarsh/ruff#flake8-comprehensions)
-  "B", # [`flake8-bugbear`](https://github.com/charliermarsh/ruff#flake8-bugbear)
-  "A", # [`flake8-builtins`](https://github.com/charliermarsh/ruff#flake8-builtins)
-  "Q", # [`flake8-quotes`](https://github.com/charliermarsh/ruff#flake8-quotes)
-  "ANN", # [`flake8-annotations`](https://github.com/charliermarsh/ruff#flake8-annotations)
-  "RUF", # [`ruff`](https://github.com/charliermarsh/ruff#ruff-specific-rules)
-  "M", # [`noqa`](https://github.com/charliermarsh/ruff#meta-rules)
+  "F", # [`pyflakes`](https://beta.ruff.rs/docs/rules/#pyflakes-f)
+  "E", # [`pycodestyle`](https://beta.ruff.rs/docs/rules/#pycodestyle-e-w)
+  "C90", # [`mccabe`](https://beta.ruff.rs/docs/rules/#mccabe-c90)
+  "I", # [`isort`](https://beta.ruff.rs/docs/rules/#isort-i)
+  "N", # [`pep8-naming`](https://beta.ruff.rs/docs/rules/#pep8-naming-n)
+  "D", # [`pydocstyle`](https://beta.ruff.rs/docs/rules/#pydocstyle-d)
+  "UP", # [`pyupgrade`](https://beta.ruff.rs/docs/rules/#pyupgrade-up)
+  "YTT", # [`flake8-2020`](https://beta.ruff.rs/docs/rules/#flake8-2020-ytt)
+  "ANN", # [`flake8-annotations`](https://beta.ruff.rs/docs/rules/#flake8-annotations-ann)
+  "S", # [`flake8-bandit`](https://beta.ruff.rs/docs/rules/#flake8-bandit-s)
+  "BLE", # [`flake8-blind-except`](https://beta.ruff.rs/docs/rules/#flake8-blind-except-ble),
+  # "FBT", # [`flake8-boolean-trap`](https://beta.ruff.rs/docs/rules/#flake8-boolean-trap-fbt)
+  "B", # [`flake8-bugbear`](https://beta.ruff.rs/docs/rules/#flake8-bugbear-b)
+  "A", # [`flake8-builtins`](https://beta.ruff.rs/docs/rules/#flake8-builtins-a)
+  "COM", # [`flake8-commas`](https://beta.ruff.rs/docs/rules/#flake8-commas-com)
+  "C4", # [`flake8-comprehensions`](https://beta.ruff.rs/docs/rules/#flake8-comprehensions-c4)
+  # "DTZ", # [`flake8-datetimez`](https://beta.ruff.rs/docs/rules/#flake8-datetimez-dtz)
+  "T10", # [`flake8-debugger`](https://beta.ruff.rs/docs/rules/#flake8-debugger-t10)
+  # "EM", # [`flake8-errmsg`](https://beta.ruff.rs/docs/rules/#flake8-errmsg-em)
+  # "EXE", # [`flake8-executable`](https://beta.ruff.rs/docs/rules/#flake8-executable-exe)
+  "ISC", # [`flake8-implicit-str-concat`](https://beta.ruff.rs/docs/rules/#flake8-implicit-str-concat-isc)
+  "ICN", # [`flake8-import-conventions`](https://beta.ruff.rs/docs/rules/#flake8-import-conventions-icn)
+  # TODO: Use logger
+  # "G", # [`flake8-logging-format`](https://beta.ruff.rs/docs/rules/#flake8-logging-format-g)
+  "INP", # [`flake8-no-pep420`](https://beta.ruff.rs/docs/rules/#flake8-no-pep420-inp)
+  "PIE", # [`flake8-pie`](https://beta.ruff.rs/docs/rules/#flake8-pie-pie)
+  # "T20", # [`flake8-print`](https://beta.ruff.rs/docs/rules/#flake8-print-t20)
+  "Q", # [`flake8-quotes`](https://beta.ruff.rs/docs/rules/#flake8-quotes)
+  "RSE", # [`flake8-raise`](https://beta.ruff.rs/docs/rules/#flake8-raise-rse)
+  "RET", # [`flake8-return`](https://beta.ruff.rs/docs/rules/#flake8-return-ret)
+  "SLF", # [`flake8-self`](https://beta.ruff.rs/docs/rules/#flake8-self-slf)
+  "SIM", # [`flake8-simplify`](https://beta.ruff.rs/docs/rules/#flake8-simplify-sim)
+  "TID", # [`flake8-tidy-imports`](https://beta.ruff.rs/docs/rules/#flake8-tidy-imports)
+  "ARG", # [`flake8-unused-arguments`](https://beta.ruff.rs/docs/rules/#flake8-unused-arguments-arg)
+  "PTH", # [`flake8-use-pathlib`](https://beta.ruff.rs/docs/rules/#flake8-use-pathlib-pth)
+  # "ERA", # [`eradicate`](https://beta.ruff.rs/docs/rules/#eradicate-era)
+  "PD", # [`pandas-vet`](https://beta.ruff.rs/docs/rules/#pandas-vet-pd)
+  "PL", # [`pylint`](https://beta.ruff.rs/docs/rules/#pylint-pl)
+  # "TRY", # [`tryceratops`](https://beta.ruff.rs/docs/rules/#tryceratops-try)
+  "NPY", # [`numpy`](https://beta.ruff.rs/docs/rules/#numpy-specific-rules-npy)
+  "RUF", # [`ruff`](https://beta.ruff.rs/docs/rules/#ruff-specific-rules-ruf)
 
 ]
 # Exclude a variety of commonly ignored directories.
@@ -131,28 +155,40 @@ exclude = [
   "build",
   "dist",
   "node_modules",
-  "venv",
+  "venv"
 ]
-per-file-ignores = {  }
-# Assume Python 3.10.
-target-version = "py310"
-
-# https://github.com/klen/pylama
-[tool.pylama]
-linters = "eradicate,mccabe,mypy,radon"
-max_line_length = 88
-disable_error_code = "annotation-unchecked"
-
-[tool.flake8]
-ignore = [
-  "E501", #line too long
-  "E504", #line break after binary operator
-  "W503", #line break before binary operator
-
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+# Assume Python 3.9.
+target-version = "py39"
+# Known first party packages
+src = ["src"]
+# Disable fixing certain rules, but still warn about them
+unfixable = [
+  # Don't remove unused variables
+  "F841",
+  # Don't remove commented code
+  "ERA",
+  # Don't remove `noqa` annotations
+  "RUF100",
 ]
+builtins = ["_"]
+force-exclude = true
+required-version = "0.0.259"
 
-[tool.bandit]
-ignore = [
-  "B101", # Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+# Ignore rules for scpecific files
+[tool.ruff.per-file-ignores]
+"docs/*" = ["INP"]
+"scripts/*" = ["INP"]
 
-]
+[tool.ruff.isort]
+known-first-party = ["src"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.mccabe]
+max-complexity = 15
+
+[tool.ruff.pylint]
+max-branches = 13
